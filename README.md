@@ -7,3 +7,13 @@ Official Website - https://guesthouses.000webhostapp.com/
 - Sar Sovanthea -- Member
 - Chhordeth Smile -- Member
 - Chhoeurn Vorreakboth -- Member
+
+# Features:
+- Check in
+- Check out
+- Room booking
+- Report
+- Service
+- Room management
+- Product management
+- Account management
