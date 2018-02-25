@@ -9,11 +9,12 @@ Official Website - https://guesthouses.000webhostapp.com/
 - Chhoeurn Vorreakboth
 
 # Features:
+
+- Report
+- Service
 - Check in
 - Check out
 - Room booking
-- Report
-- Service
 - Room management
 - Product management
 - Account management
