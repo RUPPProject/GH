@@ -92,7 +92,6 @@ public class MainForm extends javax.swing.JFrame {
         btnMax3 = new javax.swing.JButton();
         btnEXit3 = new javax.swing.JButton();
         btnMax = new javax.swing.JButton();
-        lblPic1 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
@@ -527,11 +526,7 @@ public class MainForm extends javax.swing.JFrame {
         btnMax.setBounds(0, 0, 40, 29);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(1460, 0, 80, 30);
-
-        lblPic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hai-chau-hotel.jpg"))); // NOI18N
-        getContentPane().add(lblPic1);
-        lblPic1.setBounds(10, 120, 310, 450);
+        jPanel1.setBounds(20, 30, 80, 30);
 
         jPanel22.setBackground(new java.awt.Color(254, 254, 254));
         jPanel22.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -957,11 +952,16 @@ public class MainForm extends javax.swing.JFrame {
         jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 97, 255)));
         jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel22.add(jButton1);
         jButton1.setBounds(0, 0, 110, 36);
 
         getContentPane().add(jPanel22);
-        jPanel22.setBounds(1450, 30, 110, 40);
+        jPanel22.setBounds(10, 60, 110, 40);
 
         lblTime.setFont(new java.awt.Font("Serif", 1, 15)); // NOI18N
         lblTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1231,6 +1231,11 @@ public class MainForm extends javax.swing.JFrame {
         //e();
     }//GEN-LAST:event_formWindowOpened
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       // LogIn log=new LogIn();
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1345,7 +1350,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel lblPic1;
     private javax.swing.JLabel lblShowName;
     private javax.swing.JLabel lblTime;
     // End of variables declaration//GEN-END:variables

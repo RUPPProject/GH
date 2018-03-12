@@ -18,7 +18,7 @@ public class Service extends javax.swing.JPanel {
         public Service() {
         initComponents();
          setSize(1257, 638);
-        setLocation(400,120);
+        setLocation(150,120);
         tbService.setAutoResizeMode(tbService.AUTO_RESIZE_OFF);
         tbService.getColumnModel().getColumn(0).setPreferredWidth(150);
         tbService.getColumnModel().getColumn(1).setPreferredWidth(363);
@@ -26,6 +26,7 @@ public class Service extends javax.swing.JPanel {
         tbService.getColumnModel().getColumn(3).setPreferredWidth(260);
         //panelB.setBounds(580, 20, 320, 220);
         //panelB.setLayout(new FlowLayout(0,0,3));
+        btnDelete.setEnabled(false);
         try{
             con=ConnectionCon.ConnectMysql();
             stm=con.createStatement();
@@ -121,7 +122,7 @@ public class Service extends javax.swing.JPanel {
             }
         });
         jPanel3.add(rdioMorning);
-        rdioMorning.setBounds(10, 20, 75, 24);
+        rdioMorning.setBounds(10, 20, 68, 18);
 
         rdioAfterNon.setText("Afternon");
         rdioAfterNon.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +136,7 @@ public class Service extends javax.swing.JPanel {
             }
         });
         jPanel3.add(rdioAfterNon);
-        rdioAfterNon.setBounds(10, 60, 81, 24);
+        rdioAfterNon.setBounds(10, 60, 71, 18);
 
         rdioAtnigth.setText("At night");
         rdioAtnigth.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -144,7 +145,7 @@ public class Service extends javax.swing.JPanel {
             }
         });
         jPanel3.add(rdioAtnigth);
-        rdioAtnigth.setBounds(10, 100, 76, 24);
+        rdioAtnigth.setBounds(10, 100, 66, 18);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(160, 50, 160, 150);
@@ -209,7 +210,7 @@ public class Service extends javax.swing.JPanel {
             }
         });
         jPanel2.add(txtQty);
-        txtQty.setBounds(170, 60, 120, 26);
+        txtQty.setBounds(170, 60, 120, 27);
 
         btnCal.setText("Cal");
         btnCal.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +224,7 @@ public class Service extends javax.swing.JPanel {
             }
         });
         jPanel2.add(btnCal);
-        btnCal.setBounds(220, 100, 70, 28);
+        btnCal.setBounds(220, 100, 70, 27);
 
         lblTotal.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         lblTotal.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(237, 34, 34), null));
@@ -254,7 +255,7 @@ public class Service extends javax.swing.JPanel {
             }
         });
         jPanel1.add(btnPayment);
-        btnPayment.setBounds(510, 230, 90, 28);
+        btnPayment.setBounds(510, 230, 90, 27);
 
         add(jPanel1);
         jPanel1.setBounds(10, 10, 710, 280);
@@ -279,7 +280,6 @@ public class Service extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tbService.setColumnSelectionAllowed(true);
         tbService.getTableHeader().setReorderingAllowed(false);
         tbService.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -351,7 +351,7 @@ public class Service extends javax.swing.JPanel {
             int index=tbService.getSelectedRow();
             int id=Integer.parseInt(tbService.getValueAt(index,0).toString());
             stm=con.createStatement();
-            stm.execute("delete from account where ID="+id);
+            stm.execute("delete from Service where NO_Room="+id);
             showData();
             btnDelete.setEnabled(false);
             btnNew.setText("Save");
@@ -394,18 +394,19 @@ public class Service extends javax.swing.JPanel {
                 }*/
                 if(rdioMorning.isSelected()){
                    // nor="Noring";
-                    nor=rdioMorning.getText();
+                    nor=rdioMorning.getText()+"_";
                 }
                 if(rdioAfterNon.isSelected()){
-                    after=rdioAfterNon.getText();
+                    after=rdioAfterNon.getText()+"_";
                 }
                 if(rdioAtnigth.isSelected()){
                     night=rdioAtnigth.getText();
                 }
-                at=nor+"_"+after+"_"+night;
+                at=nor+after+night;
                 stm=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
                 stm.execute("insert into service values('"+cboNo_Room.getSelectedItem().toString()
                     +"','"+at
+                    +"','"+lblTotal.getText()
                     +"','"+Double.parseDouble(lblPayment.getText())
                         
                     +"')");
@@ -434,21 +435,22 @@ public class Service extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void tbServiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbServiceMouseClicked
-        /*if(evt.getClickCount()==2){
-            int index=tbAccount.getSelectedRow();
+        if(evt.getClickCount()==2){
+            int index=tbService.getSelectedRow();
             //while(mode.getRowCount()>0)
-            txtID.setText(tbAccount.getValueAt(index, 0).toString());
-            txtName.setText(tbAccount.getValueAt(index,1).toString());
-            cboGender.setSelectedItem(tbAccount.getValueAt(index,2).toString());
-            txtPosition.setText(tbAccount.getValueAt(index,3).toString());
-            txtEmail.setText(tbAccount.getValueAt(index,4).toString());
-            txtPassword.setText(tbAccount.getValueAt(index,5).toString());
+            cboNo_Room.setSelectedItem(tbService.getValueAt(index, 0).toString());
+            lblTotal.setText(tbService.getValueAt(index,2).toString());
+            lblPayment.setText(tbService.getValueAt(index,3).toString());
+            //cboGender.setSelectedItem(tbService.getValueAt(index,1).toString());
+            //txtPosition.setText(tbAccount.getValueAt(index,3).toString());
+            //txtEmail.setText(tbAccount.getValueAt(index,4).toString());
+            //txtPassword.setText(tbAccount.getValueAt(index,5).toString());
             btnDelete.setEnabled(true);
             btnNew.setText("Update");
             btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-available-updates-30.png")));
 
         }
-                */
+                
 
     }//GEN-LAST:event_tbServiceMouseClicked
 
@@ -672,8 +674,7 @@ public class Service extends javax.swing.JPanel {
                             rst.getString(2),
                             rst.getString(3),
                             rst.getString(4),
-                            rst.getString(5),
-                            rst.getString(6)
+                           
                         });
                    }while(rst.next());
                   //  }

@@ -11,7 +11,7 @@ public final class Customer extends javax.swing.JPanel {
     public Customer() {
         initComponents();
         setSize(788, 574);
-        setLocation(350,120);
+        setLocation(150,120);
         try{
             con= ConnectionCon.ConnectMysql();
         }catch(Exception e){}

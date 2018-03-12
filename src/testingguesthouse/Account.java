@@ -17,7 +17,7 @@ public class Account extends javax.swing.JPanel {
          //JOptionPane.showMessageDialog(this, "Connection");
         }catch(Exception e){JOptionPane.showMessageDialog(this,e+"NOT");}
         setSize(924, 632);
-        setLocation(400,120);
+        setLocation(150,120);
         enableFalse();
         showData();
         try{
@@ -277,8 +277,8 @@ public class Account extends javax.swing.JPanel {
                                                        +"','"+cboGender.getSelectedItem()
                                                         +"','"+cboPosition.getSelectedItem()
                                                         +"','"+txtEmail.getText().trim()
-                                                        +"','"+pas
-                                                        +"','"+repassword+"')");
+                                                        +"','"+txtPassword.getText()
+                                                        +"','"+txtRepassword.getText()+"')");
             
             showData();
             clearData();

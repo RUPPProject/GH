@@ -28,7 +28,7 @@ public class Staff extends javax.swing.JPanel {
     public Staff() {
         initComponents();
         setSize(1267, 656);
-        setLocation(330,120);
+        setLocation(150,120);
        try{
        con=ConnectionCon.ConnectMysql();
        }catch(Exception e){}

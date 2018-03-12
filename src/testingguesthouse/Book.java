@@ -2,9 +2,7 @@
 package testingguesthouse;
 
 import java.sql.*;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import javafx.scene.input.KeyCode;
 import java.awt.event.KeyEvent;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -15,7 +13,7 @@ public class Book extends javax.swing.JPanel {
     public Book() {
         initComponents();
         setSize(1238, 610);
-        setLocation(350,120);
+        setLocation(150,120);
         try{
             con=ConnectionCon.ConnectMysql();
             

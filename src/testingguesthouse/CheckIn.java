@@ -17,7 +17,7 @@ public final class CheckIn extends javax.swing.JPanel {
     public CheckIn() {
         initComponents();
         setSize(1303, 639);
-        setLocation(320,120);
+        setLocation(150,120);
         
         tbCheckIn.setAutoResizeMode(tbCheckIn.AUTO_RESIZE_OFF);
         tbCheckIn.getColumnModel().getColumn(0).setPreferredWidth(70);
@@ -32,7 +32,7 @@ public final class CheckIn extends javax.swing.JPanel {
         tbCheckIn.getColumnModel().getColumn(9).setPreferredWidth(130);
         tbCheckIn.getColumnModel().getColumn(10).setPreferredWidth(103);
         
-        Tatal1();
+        //Tatal1();
         try{
             con=ConnectionCon.ConnectMysql();
             
@@ -474,6 +474,7 @@ public final class CheckIn extends javax.swing.JPanel {
          btnNew.setText("Update");
          btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-available-updates-30.png")));
          EnabledTrue();
+        // btnDelete.setEnabled(false);
     }//GEN-LAST:event_tbCheckInMouseClicked
 
     private void cboNoRoomFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cboNoRoomFocusLost

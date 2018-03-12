@@ -9,7 +9,7 @@ public class CheckOut extends javax.swing.JPanel {
     public CheckOut() {
         initComponents();
         setSize(1237, 515);
-        setLocation(350,120);
+        setLocation(150,120);
         try{
         con=ConnectionCon.ConnectMysql();
         stm=con.createStatement();
