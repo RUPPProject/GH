@@ -6,7 +6,7 @@ Official Website - https://guesthouses.000webhostapp.com/
 - Chhordeth Smile
 - Sar Sovanthea
 - Hean Theara
-- Ean Dalin
+- Ean Dalin - Founder
 
 
 # Features:
